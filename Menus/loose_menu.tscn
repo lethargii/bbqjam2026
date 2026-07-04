@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqfpik23jkeke"]
 
 [ext_resource type="Script" uid="uid://bw1aomwyo250u" path="res://win_menu.gd" id="1_6fo5m"]
+[ext_resource type="FontFile" uid="uid://qw35ulgw3lhi" path="res://assets/fonts/PixelOperator8.ttf" id="2_h88wd"]
 
 [node name="LooseMenu" type="CanvasLayer" unique_id=1880391572]
 script = ExtResource("1_6fo5m")
@@ -21,6 +22,8 @@ size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=318906605]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_h88wd")
 text = "You died :("
 
 [node name="startButton" type="Button" parent="VBoxContainer" unique_id=910141348]

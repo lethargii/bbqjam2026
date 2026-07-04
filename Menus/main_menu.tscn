@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boc3ibp4yk253"]
 
 [ext_resource type="Script" uid="uid://dhwrfr4kfxgph" path="res://Menus/main_menu.gd" id="1_jf8mj"]
+[ext_resource type="FontFile" uid="uid://qw35ulgw3lhi" path="res://assets/fonts/PixelOperator8.ttf" id="2_p3jrs"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=188148136]
 script = ExtResource("1_jf8mj")
@@ -21,6 +22,7 @@ size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=927380920]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p3jrs")
 text = "échappe toi de la cave de smokey the bear"
 
 [node name="startButton" type="Button" parent="VBoxContainer" unique_id=2026353311]

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://co804bihrkx1p" path="res://hideout.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://x6n268jhtw51" path="res://entity/enemy.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://bnmk0on4mampl" path="res://entity/door.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://de2s76pcs4f6l" path="res://entity/note.tscn" id="10_4c57u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_ig7tw")
@@ -98,6 +99,37 @@ wait_time = 0.1
 one_shot = true
 autostart = true
 
+[node name="Enemies" type="Node2D" parent="." unique_id=940604057]
+position = Vector2(-501, 48)
+
+[node name="Enemy" parent="Enemies" unique_id=1465019855 instance=ExtResource("7_272bh")]
+position = Vector2(501, -365)
+actions = Array[String](["look_down", "look_right"])
+
+[node name="Enemy2" parent="Enemies" unique_id=842821241 instance=ExtResource("7_272bh")]
+position = Vector2(1294, -28)
+actions = Array[String](["go_left", "go_left", "go_left", "go_left", "go_left", "go_down", "go_right", "go_right", "go_right", "go_right", "go_right", "go_up"])
+
+[node name="Enemy3" parent="Enemies" unique_id=646008466 instance=ExtResource("7_272bh")]
+position = Vector2(-99, 5)
+actions = Array[String](["go_up", "go_right", "go_right", "go_down", "go_down", "go_right", "go_right", "go_up", "go_down", "go_left", "go_left", "go_up", "go_up", "go_left", "go_left", "go_down"])
+
+[node name="Hideouts" type="Node2D" parent="." unique_id=309286122]
+
+[node name="Hideout" parent="Hideouts" unique_id=1634222053 instance=ExtResource("6_7mycd")]
+
+[node name="Hideout3" parent="Hideouts" unique_id=22775125 instance=ExtResource("6_7mycd")]
+position = Vector2(-501, 48)
+
+[node name="Area2D" parent="Hideouts/Hideout3" index="0" unique_id=236675243]
+position = Vector2(-0.375, -42)
+
+[node name="Hideout4" parent="Hideouts" unique_id=7657004 instance=ExtResource("6_7mycd")]
+position = Vector2(-571, 100)
+
+[node name="Door" parent="." unique_id=498835129 instance=ExtResource("8_5vw27")]
+position = Vector2(0, -653)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1092789654]
 unique_name_in_owner = true
 script = ExtResource("4_lquwl")
@@ -128,16 +160,36 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 value = 100.0
 show_percentage = false
 
-[node name="Hideout2" type="Node2D" parent="." unique_id=309286122]
+[node name="notes" type="Node2D" parent="." unique_id=1035230846]
+position = Vector2(53, -601)
 
-[node name="Hideout" parent="Hideout2" unique_id=1634222053 instance=ExtResource("6_7mycd")]
+[node name="note" parent="notes" unique_id=1757265446 instance=ExtResource("10_4c57u")]
+position = Vector2(-909, 559)
+text = "RIP jmj"
 
-[node name="Enemy" parent="." unique_id=1465019855 instance=ExtResource("7_272bh")]
-position = Vector2(0, -317)
-actions = Array[String](["look_down", "look_right"])
+[node name="note2" parent="notes" unique_id=166750090 instance=ExtResource("10_4c57u")]
+position = Vector2(1069, 624)
+text = "mvj's cave"
+frame = 1
 
-[node name="Door" parent="." unique_id=498835129 instance=ExtResource("8_5vw27")]
-position = Vector2(0, -445)
+[node name="note3" parent="notes" unique_id=647428982 instance=ExtResource("10_4c57u")]
+position = Vector2(-117, 1221)
+text = "Je ne suis pas le seul ici..."
+frame = 2
+
+[node name="note4" parent="notes" unique_id=1250779430 instance=ExtResource("10_4c57u")]
+position = Vector2(-914, 1206)
+text = "I swear I don't know who is winnie."
+frame = 4
+
+[node name="note5" parent="notes" unique_id=611669330 instance=ExtResource("10_4c57u")]
+text = "I cannot find the key"
+frame = 3
+
+[node name="note6" parent="notes" unique_id=1353766265 instance=ExtResource("10_4c57u")]
+position = Vector2(-5, 549)
+text = "north : door"
+frame = 1
 
 [node name="Player" parent="." unique_id=34874288 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
@@ -147,27 +199,6 @@ collision_mask = 3
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1452746080]
 zoom = Vector2(4, 4)
 
-[node name="Enemy2" parent="." unique_id=842821241 instance=ExtResource("7_272bh")]
-position = Vector2(793, 20)
-actions = Array[String](["go_left", "go_left", "go_left", "go_left", "go_left", "go_down", "go_right", "go_right", "go_right", "go_right", "go_right", "go_up"])
-
-[node name="Enemy3" parent="." unique_id=646008466 instance=ExtResource("7_272bh")]
-position = Vector2(-600, 53)
-actions = Array[String](["go_up", "go_right", "go_right", "go_down", "go_down", "go_right", "go_right", "go_up", "go_down", "go_left", "go_left", "go_up", "go_up", "go_left", "go_left", "go_down"])
-
-[node name="Hideout2" parent="." unique_id=22775125 instance=ExtResource("6_7mycd")]
-position = Vector2(-501, 48)
-
-[node name="Area2D" parent="Hideout2" index="0" unique_id=236675243]
-position = Vector2(-0.375, -42)
-
-[node name="Hideout3" parent="." unique_id=7657004 instance=ExtResource("6_7mycd")]
-position = Vector2(-571, 100)
-
-[node name="Area2D" parent="Hideout3" index="0" unique_id=236675243]
-position = Vector2(-0.375, -42)
-
 [connection signal="timeout" from="Keys/Timer" to="Keys" method="_on_timer_timeout"]
 
-[editable path="Hideout2"]
-[editable path="Hideout3"]
+[editable path="Hideouts/Hideout3"]
