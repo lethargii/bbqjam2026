@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 		if anger>10:
 			%Player.die()
 	else:
-		anger-=_delta*5
+		anger-=_delta*2
 
 func _physics_process(delta: float) -> void:
 		velocity = delta * SPEED * move
