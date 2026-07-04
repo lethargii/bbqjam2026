@@ -104,6 +104,7 @@ show_percentage = false
 
 [node name="Enemy" parent="." unique_id=1465019855 instance=ExtResource("7_272bh")]
 position = Vector2(8, -91)
+actions = ["go_down", "go_up"]
 
 [node name="Door" parent="." unique_id=498835129 instance=ExtResource("8_5vw27")]
 position = Vector2(0, -445)

@@ -82,8 +82,17 @@ one_shot = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1274672652]
 
+[node name="Walk" type="Timer" parent="." unique_id=108463046]
+wait_time = 0.5
+
+[node name="NextAction" type="Timer" parent="." unique_id=2113588556]
+wait_time = 2.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Walk" to="." method="_on_walk_timeout"]
+[connection signal="timeout" from="NextAction" to="." method="_on_next_action_timeout"]
