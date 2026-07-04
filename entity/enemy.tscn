@@ -28,7 +28,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4gyqm")
 }],
-"loop": 1,
+"loop": true,
 "name": &"back",
 "speed": 5.0
 }, {
@@ -36,7 +36,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qi2p4")
 }],
-"loop": 1,
+"loop": true,
 "name": &"front",
 "speed": 5.0
 }, {
@@ -44,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iifgy")
 }],
-"loop": 1,
+"loop": true,
 "name": &"left",
 "speed": 5.0
 }, {
@@ -52,13 +52,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p1h7c")
 }],
-"loop": 1,
+"loop": true,
 "name": &"surprised",
 "speed": 5.0
 }]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ufdl5"]
-points = PackedVector2Array(0, -19, -18, 19, 18, 19)
+points = PackedVector2Array(0, 0, -18, 38, 18, 38)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1465019855]
 script = ExtResource("1_p1h7c")
@@ -73,6 +73,7 @@ animation = &"front"
 autoplay = "front"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2003646244]
+position = Vector2(0, -19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1064842420]
 shape = SubResource("ConvexPolygonShape2D_ufdl5")

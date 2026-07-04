@@ -1,14 +1,17 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
+const SPEED = 3000.0
 var direction = "down"
 var onScreen:bool=false
 var surprised:bool=false
 var move:Vector2 = Vector2.ZERO
 var nbAction = 0
+
+@export var actions : Array[String] = ["look_down"]
+
 var anger:float=0 # si elle monte a 10 die()
-@export var actions = ["look_down"]
+
 
 func _process(_delta: float) -> void:
 	if onScreen and %Player.isLightOn:
@@ -38,23 +41,27 @@ func look_up():
 	direction = "up"
 	$NextAction.start()
 	$AnimatedSprite2D.play("back")
+	$Area2D.rotation = PI
 
 func look_down():
 	direction = "down"
 	$NextAction.start()
 	$AnimatedSprite2D.play("front")
+	$Area2D.rotation = 0
 	
 func look_left():
 	direction = "left"
 	$NextAction.start()
 	$AnimatedSprite2D.play("left")
-	$AnimatedSprite2D.flip_v=false
+	$AnimatedSprite2D.flip_h=false
+	$Area2D.rotation = PI/2
 	
 func look_right():
 	direction = "right"
 	$NextAction.start()
 	$AnimatedSprite2D.play("left")
-	$AnimatedSprite2D.flip_v=true
+	$AnimatedSprite2D.flip_h=true
+	$Area2D.rotation = -PI/2
 	
 func go_up():
 	look_up()
