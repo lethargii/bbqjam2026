@@ -7,6 +7,8 @@ var nbKey=0 #le nombre de clées qu'a le joueur
 
 func addKey():
 	maxKey+=1
+func removeKey():
+	maxKey-=1
 func gotKey():
 	nbKey+=1
 	label_key.text="You have "+str(nbKey)+"/"+str(maxKey)+" keys"

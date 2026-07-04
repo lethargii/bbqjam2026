@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dgocfwtwhkhd3" path="res://assets/tiles.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b42vnqccj4k6n" path="res://entity/player.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cw1tppbl418l6" path="res://keys.gd" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://cn4lfh1io1pf0" path="res://entity/key.tscn" id="3_h2yge"]
 [ext_resource type="FontFile" uid="uid://qw35ulgw3lhi" path="res://assets/fonts/PixelOperator8.ttf" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://csjytjl6r8oxx" path="res://canvas_layer.gd" id="4_lquwl"]
@@ -77,9 +78,24 @@ tile_set = SubResource("TileSet_8wdiq")
 tile_set = SubResource("TileSet_8wdiq")
 
 [node name="Keys" type="Node2D" parent="." unique_id=345987903]
+script = ExtResource("2_kek77")
 
 [node name="key" parent="Keys" unique_id=39827177 instance=ExtResource("3_h2yge")]
-position = Vector2(69, -34)
+position = Vector2(1068, 23)
+
+[node name="key2" parent="Keys" unique_id=1480239706 instance=ExtResource("3_h2yge")]
+position = Vector2(-944, 77)
+
+[node name="key3" parent="Keys" unique_id=1002307693 instance=ExtResource("3_h2yge")]
+position = Vector2(49, 718)
+
+[node name="key4" parent="Keys" unique_id=645933232 instance=ExtResource("3_h2yge")]
+position = Vector2(-954, 644)
+
+[node name="Timer" type="Timer" parent="Keys" unique_id=922006699]
+wait_time = 0.1
+one_shot = true
+autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1092789654]
 unique_name_in_owner = true
@@ -115,3 +131,5 @@ collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1452746080]
 zoom = Vector2(4, 4)
+
+[connection signal="timeout" from="Keys/Timer" to="Keys" method="_on_timer_timeout"]
