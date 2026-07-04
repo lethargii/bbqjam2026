@@ -31,35 +31,24 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func look_up():
 	direction = "up"
 	$NextAction.start()
-
-func look_down():
-	direction = "down"
-	$NextAction.start()
-	
-func look_left():
-	direction = "left"
-	$NextAction.start()
-	
-func look_right():
-	direction = "right"
-	$NextAction.start()
-=======
 	$AnimatedSprite2D.play("back")
 
 func look_down():
 	direction = "down"
+	$NextAction.start()
 	$AnimatedSprite2D.play("front")
 	
 func look_left():
 	direction = "left"
+	$NextAction.start()
 	$AnimatedSprite2D.play("left")
 	$AnimatedSprite2D.flip_v=false
 	
 func look_right():
 	direction = "right"
+	$NextAction.start()
 	$AnimatedSprite2D.play("left")
 	$AnimatedSprite2D.flip_v=true
->>>>>>> 3d456ac276c3bdfb95f4ae6a255107055245e6cb
 	
 func go_up():
 	look_up()

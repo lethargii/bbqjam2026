@@ -62,7 +62,6 @@ points = PackedVector2Array(0, -19, -18, 19, 18, 19)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1465019855]
 script = ExtResource("1_p1h7c")
-actions = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701830381]
 shape = SubResource("CircleShape2D_8wdiq")
