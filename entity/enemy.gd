@@ -10,7 +10,6 @@ var nbAction = 0
 @export var actions = ["look_down"]
 
 func _process(_delta: float) -> void:
-	$AnimatedSprite2D.play("front")
 	if onScreen and %Player.isLightOn:
 		$AnimatedSprite2D.play("surprised")
 		if $Timer.is_stopped():
@@ -44,6 +43,23 @@ func look_left():
 func look_right():
 	direction = "right"
 	$NextAction.start()
+=======
+	$AnimatedSprite2D.play("back")
+
+func look_down():
+	direction = "down"
+	$AnimatedSprite2D.play("front")
+	
+func look_left():
+	direction = "left"
+	$AnimatedSprite2D.play("left")
+	$AnimatedSprite2D.flip_v=false
+	
+func look_right():
+	direction = "right"
+	$AnimatedSprite2D.play("left")
+	$AnimatedSprite2D.flip_v=true
+>>>>>>> 3d456ac276c3bdfb95f4ae6a255107055245e6cb
 	
 func go_up():
 	look_up()
