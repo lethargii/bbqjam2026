@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://co804bihrkx1p"]
+
+[ext_resource type="Script" uid="uid://di5knftvj2fyv" path="res://hideout.gd" id="1_ljg1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j3xw"]
+size = Vector2(175, 80)
+
+[node name="Hideout" type="Area2D" unique_id=1634222053]
+script = ExtResource("1_ljg1i")
+
+[node name="Area2D" type="CollisionShape2D" parent="." unique_id=236675243]
+position = Vector2(77.5, 30)
+shape = SubResource("RectangleShape2D_6j3xw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

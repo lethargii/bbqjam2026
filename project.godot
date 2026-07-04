@@ -24,6 +24,10 @@ Global="*uid://chtx7k7a4em6q"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="bbqJam26"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_sfxr/plugin.cfg")

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cn4lfh1io1pf0" path="res://entity/key.tscn" id="3_h2yge"]
 [ext_resource type="FontFile" uid="uid://qw35ulgw3lhi" path="res://assets/fonts/PixelOperator8.ttf" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://csjytjl6r8oxx" path="res://canvas_layer.gd" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://co804bihrkx1p" path="res://hideout.tscn" id="6_7mycd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_ig7tw")
@@ -90,3 +91,5 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("4_1bvp3")
 text = "
 You need to collect all the keys to escape !"
+
+[node name="Hideout" parent="." unique_id=1634222053 instance=ExtResource("6_7mycd")]
