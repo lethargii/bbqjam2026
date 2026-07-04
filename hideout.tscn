@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://di5knftvj2fyv" path="res://hideout.gd" id="1_ljg1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j3xw"]
-size = Vector2(175, 80)
+size = Vector2(186.5, 172)
 
 [node name="Hideout" type="Area2D" unique_id=1634222053]
 script = ExtResource("1_ljg1i")
