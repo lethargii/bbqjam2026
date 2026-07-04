@@ -10,5 +10,6 @@ func gotKey():
 	nbKey+=1
 	$Label.text="You have "+str(nbKey)+"/"+str(maxKey)+" keys"
 	if nbKey==maxKey:
-		$Label.text+="\nYou can now open the door"
+		$Label.text+="\nGo to the door!"
+		%Player.hasAllKey=true
 	

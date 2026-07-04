@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bnmk0on4mampl"]
 
-[ext_resource type="Script" path="res://door.gd" id="1_jr0rc"]
+[ext_resource type="Script" uid="uid://cm3i1xp8lg24p" path="res://entity/door.gd" id="1_jr0rc"]
 [ext_resource type="Texture2D" uid="uid://dgocfwtwhkhd3" path="res://assets/tiles.png" id="2_a7wf7"]
 [ext_resource type="FontFile" uid="uid://qw35ulgw3lhi" path="res://assets/fonts/PixelOperator8.ttf" id="3_85eqv"]
 
@@ -35,5 +35,10 @@ theme_override_fonts/font = ExtResource("3_85eqv")
 theme_override_font_sizes/font_size = 8
 text = "It is locked"
 
+[node name="timeToWin" type="Timer" parent="." unique_id=847149928]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="timeToWin" to="." method="_on_time_to_win_timeout"]
