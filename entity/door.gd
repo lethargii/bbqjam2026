@@ -4,9 +4,10 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if %Player.hasAllKey:
 			$Open.visible=true
-			$timeToWin.play()
+			$timeToWin.start()
 			%Player.speed=0
-		$Label.visible=true
+		else:
+			$Label.visible=true
 
 
 
