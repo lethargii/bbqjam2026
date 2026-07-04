@@ -26,3 +26,5 @@ text = "You won :)"
 [node name="startButton" type="Button" parent="VBoxContainer" unique_id=910141348]
 layout_mode = 2
 text = "Play again"
+
+[connection signal="pressed" from="VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
