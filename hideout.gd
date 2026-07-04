@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 
-func _on_body_entered(body: Player) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	if(body is Player):
 		body.playerHidden += 1
 		print(body.playerHidden)
