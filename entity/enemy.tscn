@@ -28,7 +28,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4gyqm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"back",
 "speed": 5.0
 }, {
@@ -36,7 +36,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qi2p4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"front",
 "speed": 5.0
 }, {
@@ -44,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iifgy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"left",
 "speed": 5.0
 }, {
@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p1h7c")
 }],
-"loop": true,
+"loop": 1,
 "name": &"surprised",
 "speed": 5.0
 }]
@@ -78,6 +78,7 @@ autoplay = "front"
 shape = SubResource("ConvexPolygonShape2D_ufdl5")
 
 [node name="Timer" type="Timer" parent="." unique_id=757128804]
+wait_time = 0.75
 one_shot = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1274672652]

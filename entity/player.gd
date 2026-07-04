@@ -21,7 +21,7 @@ func _physics_process(_delta: float) -> void:
 			$Light.visible=false
 			$Dark.visible=true
 	if isLightOn:
-		%sanityBar.value+=sanitySpeed*5
+		%sanityBar.value+=sanitySpeed*3
 	else:
 		%sanityBar.value-=sanitySpeed
 	velocity = direction * speed
