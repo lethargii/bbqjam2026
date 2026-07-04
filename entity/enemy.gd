@@ -7,9 +7,11 @@ var onScreen:bool=false
 var surprised:bool=false
 
 func _process(_delta: float) -> void:
+	$AnimatedSprite2D.play("front")
 	if onScreen and %Player.isLightOn:
 		$AnimatedSprite2D.play("surprised")
-		$Timer.start()
+		if $Timer.is_stopped():
+			$Timer.start()
 
 func _on_area_2d_body_entered(body: Player) -> void:
 	if(body is Player):

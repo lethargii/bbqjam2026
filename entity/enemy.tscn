@@ -69,7 +69,7 @@ shape = SubResource("CircleShape2D_8wdiq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1205945608]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_dionx")
-animation = &"surprised"
+animation = &"front"
 autoplay = "front"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2003646244]
@@ -78,7 +78,6 @@ autoplay = "front"
 shape = SubResource("ConvexPolygonShape2D_ufdl5")
 
 [node name="Timer" type="Timer" parent="." unique_id=757128804]
-wait_time = 4.0
 one_shot = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1274672652]
