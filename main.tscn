@@ -95,10 +95,15 @@ theme_override_fonts/font = ExtResource("4_1bvp3")
 text = "
 You need to collect all the keys to escape !"
 
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer" unique_id=1926139930]
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
 [node name="Hideout" parent="." unique_id=1634222053 instance=ExtResource("6_7mycd")]
 
 [node name="Enemy" parent="." unique_id=1465019855 instance=ExtResource("7_272bh")]
-position = Vector2(111, -18)
+position = Vector2(8, -91)
 
 [node name="Door" parent="." unique_id=498835129 instance=ExtResource("8_5vw27")]
 position = Vector2(0, -445)
