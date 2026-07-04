@@ -42,5 +42,5 @@ shape = SubResource("CircleShape2D_8wdiq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239851035]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_dionx")
-animation = &"light"
-autoplay = "light"
+animation = &"dark"
+autoplay = "dark"
