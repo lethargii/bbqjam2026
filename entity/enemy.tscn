@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://x6n268jhtw51"]
+
+[ext_resource type="Texture2D" uid="uid://bhxiqb0dkyy55" path="res://assets/entity.png" id="1_7k104"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8wdiq"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
+atlas = ExtResource("1_7k104")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
+atlas = ExtResource("1_7k104")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
+atlas = ExtResource("1_7k104")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dionx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gyqm")
+}],
+"loop": 1,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi2p4")
+}],
+"loop": 1,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iifgy")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1465019855]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701830381]
+shape = SubResource("CircleShape2D_8wdiq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1205945608]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_dionx")
+animation = &"front"
+autoplay = "front"

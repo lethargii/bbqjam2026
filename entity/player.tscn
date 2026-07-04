@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b42vnqccj4k6n"]
+
+[ext_resource type="Texture2D" uid="uid://bhxiqb0dkyy55" path="res://assets/entity.png" id="1_ej55p"]
+[ext_resource type="Script" uid="uid://bnb7w1qx77mk3" path="res://entity/player.gd" id="1_xlvtu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8wdiq"]
+radius = 4.1231055
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35xjc"]
+atlas = ExtResource("1_ej55p")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypvys"]
+atlas = ExtResource("1_ej55p")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dionx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35xjc")
+}],
+"loop": 1,
+"name": &"dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypvys")
+}],
+"loop": 1,
+"name": &"light",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=34874288]
+script = ExtResource("1_xlvtu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1974439594]
+shape = SubResource("CircleShape2D_8wdiq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239851035]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_dionx")
+animation = &"light"
+autoplay = "light"
