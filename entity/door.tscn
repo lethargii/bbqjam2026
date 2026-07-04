@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bnmk0on4mampl"]
+
+[ext_resource type="Script" uid="uid://cm3i1xp8lg24p" path="res://entity/door.gd" id="1_jr0rc"]
+[ext_resource type="Texture2D" uid="uid://dgocfwtwhkhd3" path="res://assets/tiles.png" id="2_a7wf7"]
+[ext_resource type="FontFile" uid="uid://qw35ulgw3lhi" path="res://assets/fonts/PixelOperator8.ttf" id="3_85eqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dionx"]
+radius = 8.0
+
+[node name="Door" type="Area2D" unique_id=498835129]
+script = ExtResource("1_jr0rc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=868386849]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_dionx")
+
+[node name="Close" type="Sprite2D" parent="." unique_id=563208997]
+texture = ExtResource("2_a7wf7")
+region_enabled = true
+region_rect = Rect2(35, 90, 10, 16)
+
+[node name="Open" type="Sprite2D" parent="." unique_id=2040896508]
+visible = false
+texture = ExtResource("2_a7wf7")
+region_enabled = true
+region_rect = Rect2(51, 90, 10, 16)
+
+[node name="Label" type="Label" parent="." unique_id=1834596697]
+visible = false
+offset_left = -31.0
+offset_top = -19.0
+offset_right = 40.0
+offset_bottom = -11.0
+theme_override_fonts/font = ExtResource("3_85eqv")
+theme_override_font_sizes/font_size = 8
+text = "It is locked"
+
+[node name="timeToWin" type="Timer" parent="." unique_id=847149928]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="timeToWin" to="." method="_on_time_to_win_timeout"]
