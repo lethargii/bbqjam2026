@@ -13,7 +13,16 @@ func _physics_process(_delta: float) -> void:
 		isLightOn=not isLightOn
 		if isLightOn:
 			$AnimatedSprite2D.play("light")
+			$Light.visible=true
+			$Dark.visible=false
 		else:
 			$AnimatedSprite2D.play("dark")
+			$Light.visible=false
+			$Dark.visible=true
 	velocity = direction * speed
+	if playerInSmokeyFOV and playerHidden==0:
+		die()
 	move_and_slide()
+
+func die():
+	get_tree().change_scene_to_file("res://Menus/loose_menu.tscn")

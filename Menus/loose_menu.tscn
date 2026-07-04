@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bqfpik23jkeke"]
+
+[ext_resource type="Script" uid="uid://bw1aomwyo250u" path="res://win_menu.gd" id="1_6fo5m"]
+
+[node name="LooseMenu" type="CanvasLayer" unique_id=1880391572]
+script = ExtResource("1_6fo5m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2022115755]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -29.0
+offset_right = 164.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=318906605]
+layout_mode = 2
+text = "You died :("
+
+[node name="startButton" type="Button" parent="VBoxContainer" unique_id=910141348]
+layout_mode = 2
+text = "Play again"
+
+[connection signal="pressed" from="VBoxContainer/startButton" to="." method="_on_start_button_pressed"]

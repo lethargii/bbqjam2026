@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bhxiqb0dkyy55" path="res://assets/entity.png" id="1_ej55p"]
 [ext_resource type="Script" uid="uid://bnb7w1qx77mk3" path="res://entity/player.gd" id="1_xlvtu"]
+[ext_resource type="Texture2D" uid="uid://c1wktb3qblpln" path="res://assets/darkness.png" id="3_qd8qs"]
+[ext_resource type="Texture2D" uid="uid://0syqxc5f8sdf" path="res://assets/light.png" id="4_3hik6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wdiq"]
 radius = 4.1231055
@@ -44,3 +46,14 @@ position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_dionx")
 animation = &"dark"
 autoplay = "dark"
+
+[node name="Dark" type="PointLight2D" parent="." unique_id=12002662]
+blend_mode = 2
+texture = ExtResource("3_qd8qs")
+texture_scale = 0.2
+
+[node name="Light" type="PointLight2D" parent="." unique_id=1708778893]
+visible = false
+blend_mode = 2
+texture = ExtResource("4_3hik6")
+texture_scale = 0.2
