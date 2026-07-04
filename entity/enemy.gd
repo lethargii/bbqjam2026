@@ -8,7 +8,6 @@ var onScreen:bool=false
 var surprised:bool=false
 
 func _process(_delta: float) -> void:
-	$AnimatedSprite2D.play("front")
 	if onScreen and %Player.isLightOn:
 		$AnimatedSprite2D.play("surprised")
 		if $Timer.is_stopped():
@@ -25,15 +24,21 @@ func _on_area_2d_body_exited(body: Player) -> void:
 
 func look_up():
 	direction = "up"
+	$AnimatedSprite2D.play("back")
 
 func look_down():
 	direction = "down"
+	$AnimatedSprite2D.play("front")
 	
 func look_left():
 	direction = "left"
+	$AnimatedSprite2D.play("left")
+	$AnimatedSprite2D.flip_v=false
 	
 func look_right():
 	direction = "right"
+	$AnimatedSprite2D.play("left")
+	$AnimatedSprite2D.flip_v=true
 	
 func go_up():
 	look_up()
