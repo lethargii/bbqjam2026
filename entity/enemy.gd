@@ -7,13 +7,22 @@ var onScreen:bool=false
 var surprised:bool=false
 var move:Vector2 = Vector2.ZERO
 var nbAction = 0
+
 @export var actions : Array[String] = ["look_down"]
+
+var anger:float=0 # si elle monte a 10 die()
+
 
 func _process(_delta: float) -> void:
 	if onScreen and %Player.isLightOn:
 		$AnimatedSprite2D.play("surprised")
 		if $Timer.is_stopped():
 			$Timer.start()
+		anger+=_delta*35
+		if anger>10:
+			%Player.die()
+	else:
+		anger-=_delta*2
 
 func _physics_process(delta: float) -> void:
 		velocity = delta * SPEED * move
@@ -91,7 +100,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_timer_timeout() -> void:
-	if %Player.playerHidden==0:
+	if %Player.isLightOn:
 		print("you died")
 		%Player.die()
 	else:

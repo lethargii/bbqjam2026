@@ -79,6 +79,7 @@ position = Vector2(0, -19)
 shape = SubResource("ConvexPolygonShape2D_ufdl5")
 
 [node name="Timer" type="Timer" parent="." unique_id=757128804]
+wait_time = 0.75
 one_shot = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1274672652]

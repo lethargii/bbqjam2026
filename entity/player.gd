@@ -1,11 +1,12 @@
 extends CharacterBody2D
 class_name Player
 
-var speed = 75.0
+var speed:float = 75.0
+var sanitySpeed:float=0.2
 var playerHidden : int = 0
 var playerInSmokeyFOV : bool = false
-var hasAllKey=false
-var isLightOn=false
+var hasAllKey:bool=false
+var isLightOn:bool=false
 
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move left", "move right", "move up", "move down")
@@ -19,6 +20,10 @@ func _physics_process(_delta: float) -> void:
 			$AnimatedSprite2D.play("dark")
 			$Light.visible=false
 			$Dark.visible=true
+	if isLightOn:
+		%sanityBar.value+=sanitySpeed*3
+	else:
+		%sanityBar.value-=sanitySpeed
 	velocity = direction * speed
 	if playerInSmokeyFOV and playerHidden==0:
 		die()

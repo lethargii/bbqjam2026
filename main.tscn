@@ -75,6 +75,7 @@ tile_map_data = PackedByteArray("AAAKAOz/AAADAAQAAAALAOz/AAACAAQAAAAMAOz/AAADAAQ
 tile_set = SubResource("TileSet_8wdiq")
 
 [node name="lilWall" type="TileMapLayer" parent="TileMaps" unique_id=63115729]
+tile_map_data = PackedByteArray("AADd/wMAAAAAAAMAAADd/wQAAAAAAAMAADDb/wIAAAAAAAMAAGDc/wIAAAAAAAMAAFDf////AAAAAAMAAADf/wAAAAAAAAMAADDg/wEAAAAAAAMAAGDh/wEAAAAAAAMAAFA=")
 tile_set = SubResource("TileSet_8wdiq")
 
 [node name="Keys" type="Node2D" parent="." unique_id=345987903]
@@ -111,8 +112,19 @@ theme_override_fonts/font = ExtResource("4_1bvp3")
 text = "
 You need to collect all the keys to escape !"
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer" unique_id=1926139930]
-layout_mode = 2
+[node name="sanityBar" type="ProgressBar" parent="CanvasLayer" unique_id=1926139930]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -33.0
+offset_right = 540.0
+offset_bottom = -6.0
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.9490196, 0, 0.9490196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 value = 100.0
 show_percentage = false
 
@@ -137,4 +149,23 @@ zoom = Vector2(4, 4)
 position = Vector2(793, 20)
 actions = Array[String](["go_left", "go_left", "go_left", "go_left", "go_left", "go_down", "go_right", "go_right", "go_right", "go_right", "go_right", "go_up"])
 
+[node name="Enemy3" parent="." unique_id=646008466 instance=ExtResource("7_272bh")]
+position = Vector2(-600, 53)
+actions = Array[String](["go_up", "go_right", "go_right", "go_down", "go_down", "go_right", "go_right", "go_up", "go_down", "go_left", "go_left", "go_up", "go_up", "go_left", "go_left", "go_down"])
+
+[node name="Hideout2" parent="." unique_id=22775125 instance=ExtResource("6_7mycd")]
+position = Vector2(-501, 48)
+
+[node name="Area2D" parent="Hideout2" index="0" unique_id=236675243]
+position = Vector2(-0.375, -42)
+
+[node name="Hideout3" parent="." unique_id=7657004 instance=ExtResource("6_7mycd")]
+position = Vector2(-571, 100)
+
+[node name="Area2D" parent="Hideout3" index="0" unique_id=236675243]
+position = Vector2(-0.375, -42)
+
 [connection signal="timeout" from="Keys/Timer" to="Keys" method="_on_timer_timeout"]
+
+[editable path="Hideout2"]
+[editable path="Hideout3"]
