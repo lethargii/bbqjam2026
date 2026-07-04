@@ -111,8 +111,19 @@ theme_override_fonts/font = ExtResource("4_1bvp3")
 text = "
 You need to collect all the keys to escape !"
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/VBoxContainer" unique_id=1926139930]
-layout_mode = 2
+[node name="sanityBar" type="ProgressBar" parent="CanvasLayer" unique_id=1926139930]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -33.0
+offset_right = 540.0
+offset_bottom = -6.0
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.9490196, 0, 0.9490196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 value = 100.0
 show_percentage = false
 
