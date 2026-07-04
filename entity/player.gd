@@ -24,6 +24,8 @@ func _physics_process(_delta: float) -> void:
 		%sanityBar.value+=sanitySpeed*3
 	else:
 		%sanityBar.value-=sanitySpeed
+		if %sanityBar.value==0:
+			die()
 	velocity = direction * speed
 	if playerInSmokeyFOV and playerHidden==0:
 		die()

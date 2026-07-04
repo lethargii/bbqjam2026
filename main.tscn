@@ -127,7 +127,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 value = 100.0
 show_percentage = false
 
-[node name="Hideout" parent="." unique_id=1634222053 instance=ExtResource("6_7mycd")]
+[node name="Hideout2" type="Node2D" parent="." unique_id=309286122]
+
+[node name="Hideout" parent="Hideout2" unique_id=1634222053 instance=ExtResource("6_7mycd")]
 
 [node name="Enemy" parent="." unique_id=1465019855 instance=ExtResource("7_272bh")]
 position = Vector2(8, -91)
