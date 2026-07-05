@@ -43,8 +43,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func die():
-	pass
-	#awget_tree().change_scene_to_file("res://Menus/loose_menu.tscn")
+	get_tree().change_scene_to_file("res://Menus/loose_menu.tscn")
 
 func changeLight():
 	isLightOn=not isLightOn
