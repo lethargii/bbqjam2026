@@ -17,7 +17,7 @@ func _physics_process(_delta: float) -> void:
 	if isLightOn:
 		%sanityBar.value+=sanitySpeed*3
 	else:
-		%sanityBar.value-=sanitySpeed
+		%sanityBar.value-=sanitySpeed*0.5
 		if %sanityBar.value==0:
 			Global.causeOfDeath="You need to be cautious about your sanity.\nDon't stay in the dark for too long."
 			die()
