@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://m3kag1xfghil" path="res://Menus/first_frame.gd" id="1_muf5i"]
 [ext_resource type="Texture2D" uid="uid://s62cmlsls5x" path="res://assets/first_frame.png" id="1_paleq"]
-[ext_resource type="Texture2D" uid="uid://6lweblbsm5l5" path="res://assets/smokey/screemerSmokey.png" id="3_hkp64"]
+[ext_resource type="Texture2D" uid="uid://c8ad8h1bm1ru3" path="res://assets/smokey/cutScreemerSmokey.png" id="3_hkp64"]
 
 [node name="first frame" type="CanvasLayer" unique_id=1393319421]
 script = ExtResource("1_muf5i")
@@ -13,12 +13,6 @@ scale = Vector2(41.070313, 41.070313)
 texture = ExtResource("1_paleq")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1154344874]
-visible = false
-position = Vector2(586, 269)
+position = Vector2(566, 1163)
 scale = Vector2(0.53279215, 0.5127778)
 texture = ExtResource("3_hkp64")
-
-[node name="Timer" type="Timer" parent="." unique_id=916425664]
-wait_time = 0.3
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
