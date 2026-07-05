@@ -1,10 +1,41 @@
 [gd_scene format=3 uid="uid://boc3ibp4yk253"]
 
 [ext_resource type="Script" uid="uid://dhwrfr4kfxgph" path="res://Menus/main_menu.gd" id="1_jf8mj"]
+[ext_resource type="Texture2D" uid="uid://ckktvtqef2h3v" path="res://assets/smokey/smokeyMenu.jpg" id="2_at0u2"]
 [ext_resource type="FontFile" uid="uid://qw35ulgw3lhi" path="res://assets/fonts/PixelOperator8.ttf" id="2_p3jrs"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xl1y5"]
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_w53kn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnfmr"]
+
+[sub_resource type="Gradient" id="Gradient_at0u2"]
+offsets = PackedFloat32Array(0.93509614)
+colors = PackedColorArray(0, 0, 0, 0.7607843)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l1tf5"]
+gradient = SubResource("Gradient_at0u2")
 
 [node name="MainMenu" type="CanvasLayer" unique_id=188148136]
 script = ExtResource("1_jf8mj")
+
+[node name="white" type="Sprite2D" parent="." unique_id=314451967]
+material = SubResource("CanvasItemMaterial_xl1y5")
+position = Vector2(573.5, 320)
+scale = Vector2(18.328123, 10.34375)
+texture = SubResource("DrawableTexture2D_w53kn")
+
+[node name="smokey" type="Sprite2D" parent="." unique_id=1525319142]
+position = Vector2(580.4375, 321.0956)
+scale = Vector2(0.3687454, 0.3687454)
+texture = ExtResource("2_at0u2")
+
+[node name="black" type="Sprite2D" parent="." unique_id=1208502919]
+material = SubResource("ShaderMaterial_tnfmr")
+position = Vector2(582.75, 322.99997)
+scale = Vector2(6.0859375, 1.5156249)
+texture = SubResource("GradientTexture2D_l1tf5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1500512819]
 anchors_preset = 8
