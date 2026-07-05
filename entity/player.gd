@@ -13,15 +13,7 @@ var animationPeriodVertical:float=0 # pour faire fonctionner l'animation du joue
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move left", "move right", "move up", "move down")
 	if Input.is_action_just_pressed("useMatch"):
-		isLightOn=not isLightOn
-		if isLightOn:
-			$AnimatedSprite2D.play("light")
-			$Light.visible=true
-			$Dark.visible=false
-		else:
-			$AnimatedSprite2D.play("dark")
-			$Light.visible=false
-			$Dark.visible=true
+		changeLight()
 	if isLightOn:
 		%sanityBar.value+=sanitySpeed*3
 	else:
@@ -52,3 +44,14 @@ func _physics_process(_delta: float) -> void:
 
 func die():
 	get_tree().change_scene_to_file("res://Menus/loose_menu.tscn")
+
+func changeLight():
+	isLightOn=not isLightOn
+	if isLightOn:
+		$AnimatedSprite2D.play("light")
+		$Light.visible=true
+		$Dark.visible=false
+	else:
+		$AnimatedSprite2D.play("dark")
+		$Light.visible=false
+		$Dark.visible=true

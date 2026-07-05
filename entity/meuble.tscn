@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cnfqgt65jg1xf"]
+
+[ext_resource type="Texture2D" uid="uid://dgocfwtwhkhd3" path="res://assets/tiles.png" id="1_21jny"]
+[ext_resource type="Script" uid="uid://bfwwxj7lx0u2e" path="res://entity/meuble.gd" id="1_nqjc1"]
+[ext_resource type="PackedScene" uid="uid://de2s76pcs4f6l" path="res://entity/note.tscn" id="3_nuwkl"]
+
+[node name="meuble" type="Area2D" unique_id=1269478608]
+script = ExtResource("1_nqjc1")
+
+[node name="Closed" type="Sprite2D" parent="." unique_id=772034841]
+texture = ExtResource("1_21jny")
+region_enabled = true
+region_rect = Rect2(82, 96, 10, 20)
+
+[node name="Open" type="Sprite2D" parent="." unique_id=1682121981]
+visible = false
+texture = ExtResource("1_21jny")
+region_enabled = true
+region_rect = Rect2(98, 96, 10, 20)
+
+[node name="TimeToEnter" type="Timer" parent="." unique_id=1331896750]
+wait_time = 0.5
+
+[node name="note" parent="." unique_id=1757265446 instance=ExtResource("3_nuwkl")]
+text = "press \"r\" to hide"
+frame = -1
+
+[connection signal="timeout" from="TimeToEnter" to="." method="_on_time_to_enter_timeout"]

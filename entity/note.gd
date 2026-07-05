@@ -1,9 +1,11 @@
 extends Area2D
 @export var text:String
 @export var frame:int
-# Called when the node enters the scene tree for the first time.
+var isPlayerClose:bool=false
+
 func _ready() -> void:
-	get_child(frame).visible=true
+	if frame!=-1:
+		get_child(frame).visible=true
 	$Label.text=text
 
 
@@ -11,6 +13,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$Label.visible=true
+		isPlayerClose=true
 
 
 
@@ -18,3 +21,4 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		$Label.visible=false
+		isPlayerClose=false
