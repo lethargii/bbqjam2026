@@ -1,5 +1,5 @@
 extends Node2D
-var nbKeyToRemove:int=1
+var nbKeyToRemove:int=0
 
 func _ready() -> void:
 	for i in nbKeyToRemove:

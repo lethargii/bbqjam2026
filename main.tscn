@@ -155,7 +155,6 @@ position = Vector2(85.5, 32.5)
 
 [node name="Player" parent="TileMaps/lilWall" unique_id=34874288 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
-visible = false
 collision_layer = 3
 collision_mask = 3
 
@@ -186,7 +185,7 @@ autostart = true
 position = Vector2(-501, 48)
 
 [node name="Enemy" parent="Enemies" unique_id=1465019855 instance=ExtResource("7_272bh")]
-position = Vector2(501, -365)
+position = Vector2(484, -337)
 actions = Array[String](["look_down", "look_right"])
 actionsTimes = Array[int]([1, 1])
 
