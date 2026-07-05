@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bnb7w1qx77mk3" path="res://entity/player.gd" id="1_xlvtu"]
 [ext_resource type="Texture2D" uid="uid://c1wktb3qblpln" path="res://assets/darkness.png" id="3_qd8qs"]
 [ext_resource type="Texture2D" uid="uid://0syqxc5f8sdf" path="res://assets/light.png" id="4_3hik6"]
+[ext_resource type="Texture2D" uid="uid://dytyxbgsydv44" path="res://assets/moonlight.png" id="5_tnfmr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wdiq"]
 radius = 4.1231055
@@ -56,4 +57,12 @@ texture_scale = 0.2
 visible = false
 blend_mode = 2
 texture = ExtResource("4_3hik6")
+texture_scale = 0.2
+
+[node name="MoonLight" type="PointLight2D" parent="." unique_id=808894973]
+enabled = false
+color = Color(0.25490198, 0.70980394, 1, 1)
+energy = 3.0
+blend_mode = 2
+texture = ExtResource("5_tnfmr")
 texture_scale = 0.2

@@ -9,12 +9,13 @@ var hasAllKey:bool=false
 var isLightOn:bool=false
 var animationPeriodRotation:float=0 # pour faire fonctionner l'animation du joueur
 var animationPeriodVertical:float=0 # pour faire fonctionner l'animation du joueur
+var isSafe = false
 
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move left", "move right", "move up", "move down")
 	if Input.is_action_just_pressed("useMatch"):
 		changeLight()
-	if isLightOn:
+	if isLightOn or $MoonLight.enabled:
 		%sanityBar.value+=sanitySpeed*3
 	else:
 		%sanityBar.value-=sanitySpeed*0.5
@@ -63,3 +64,6 @@ func rmVisibile():
 func addVisibile():
 	$CollisionShape2D.visible=true
 	$AnimatedSprite2D.visible=true
+	
+func toggleMoonLight(toggle : bool):
+	$MoonLight.enabled = toggle
