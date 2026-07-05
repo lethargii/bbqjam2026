@@ -55,3 +55,11 @@ func changeLight():
 		$AnimatedSprite2D.play("dark")
 		$Light.visible=false
 		$Dark.visible=true
+
+func rmVisibile():
+	$CollisionShape2D.visible=false
+	$AnimatedSprite2D.visible=false
+
+func addVisibile():
+	$CollisionShape2D.visible=true
+	$AnimatedSprite2D.visible=true

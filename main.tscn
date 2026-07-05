@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cn4lfh1io1pf0" path="res://entity/key.tscn" id="3_h2yge"]
 [ext_resource type="FontFile" uid="uid://qw35ulgw3lhi" path="res://assets/fonts/PixelOperator8.ttf" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://csjytjl6r8oxx" path="res://canvas_layer.gd" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cnfqgt65jg1xf" path="res://entity/meuble.tscn" id="5_w48qg"]
 [ext_resource type="PackedScene" uid="uid://co804bihrkx1p" path="res://hideout.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://x6n268jhtw51" path="res://entity/enemy.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://bnmk0on4mampl" path="res://entity/door.tscn" id="8_5vw27"]
@@ -99,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vivmo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 7.0
 }]
@@ -162,6 +163,9 @@ actions = Array[String](["go_up", "go_right", "go_down", "go_right", "go_up", "g
 actionsTimes = Array[int]([1, 3, 1, 3, 1, 1, 3, 1, 3, 1])
 
 [node name="Hideouts" type="Node2D" parent="." unique_id=309286122]
+
+[node name="meuble" parent="Hideouts" unique_id=1269478608 instance=ExtResource("5_w48qg")]
+position = Vector2(-245, -6)
 
 [node name="Hideout" parent="Hideouts" unique_id=1634222053 instance=ExtResource("6_7mycd")]
 
