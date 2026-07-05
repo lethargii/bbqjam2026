@@ -273,6 +273,11 @@ position = Vector2(-5, 549)
 text = "north : door"
 frame = 1
 
+[node name="note7" parent="notes" unique_id=178654466 instance=ExtResource("10_4c57u")]
+position = Vector2(-90, 586)
+text = "Use \"e\" to light on or off a match"
+frame = 2
+
 [node name="Player" parent="." unique_id=34874288 instance=ExtResource("2_0xm2m")]
 unique_name_in_owner = true
 collision_layer = 3
