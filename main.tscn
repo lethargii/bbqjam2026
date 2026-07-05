@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://de2s76pcs4f6l" path="res://entity/note.tscn" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://dt6ae6n1d6mf1" path="res://danger_frame.gd" id="10_ycdy4"]
 [ext_resource type="Script" uid="uid://ca3mxxce54hl5" path="res://addons/godot_sfxr/SfxrStreamPlayer2D.gd" id="11_w48qg"]
+[ext_resource type="PackedScene" uid="uid://qe6aammi4khk" path="res://entity/safe_zone.tscn" id="15_vivmo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_ig7tw")
@@ -104,7 +105,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vivmo")
 }],
-"loop": 1,
+"loop": true,
 "name": &"default",
 "speed": 7.0
 }]
@@ -317,6 +318,24 @@ frame = 1
 position = Vector2(-90, 586)
 text = "Use \"e\" to light on or off a match"
 frame = 2
+
+[node name="safeZone" parent="." unique_id=1179844172 instance=ExtResource("15_vivmo")]
+position = Vector2(-3, 22)
+
+[node name="safeZone2" parent="." unique_id=1653035067 instance=ExtResource("15_vivmo")]
+position = Vector2(-915, 24)
+
+[node name="safeZone3" parent="." unique_id=210710146 instance=ExtResource("15_vivmo")]
+position = Vector2(-920, 673)
+
+[node name="safeZone4" parent="." unique_id=924493173 instance=ExtResource("15_vivmo")]
+position = Vector2(-8, 682)
+
+[node name="safeZone5" parent="." unique_id=1820759467 instance=ExtResource("15_vivmo")]
+position = Vector2(1058, 19)
+
+[node name="safeZone6" parent="." unique_id=102367247 instance=ExtResource("15_vivmo")]
+position = Vector2(0, -591)
 
 [connection signal="timeout" from="Keys/Timer" to="Keys" method="_on_timer_timeout"]
 [connection signal="animation_looped" from="CanvasLayer/dangerFrame" to="CanvasLayer/dangerFrame" method="_on_animation_looped"]
