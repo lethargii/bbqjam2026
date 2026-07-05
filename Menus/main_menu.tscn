@@ -23,7 +23,7 @@ size_flags_horizontal = 4
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=927380920]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_p3jrs")
-text = "échappe toi de la cave de smokey the bear"
+text = "Escape from Smokey's cave"
 
 [node name="startButton" type="Button" parent="VBoxContainer" unique_id=2026353311]
 layout_mode = 2

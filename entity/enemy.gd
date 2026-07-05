@@ -18,8 +18,10 @@ func _process(_delta: float) -> void:
 		$AnimatedSprite2D.play("surprised")
 		if $Timer.is_stopped():
 			$Timer.start()
+			$SfxrStreamPlayer2D.play()
 		anger+=_delta*35
 		if anger>10:
+			Global.causeOfDeath="Smokey is sensible to the smoke of your matches.\nTurn off the lights when he is near."
 			%Player.die()
 	else:
 		anger-=_delta*2

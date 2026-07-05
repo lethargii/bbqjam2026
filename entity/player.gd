@@ -27,11 +27,15 @@ func _physics_process(_delta: float) -> void:
 	else:
 		%sanityBar.value-=sanitySpeed
 		if %sanityBar.value==0:
+			Global.causeOfDeath="You need to be cautious about your sanity.\nDon't stay in the dark for too long."
 			die()
+	if %sanityBar.value<30:
+		%dangerFrame.visible=true
+	else :
+		%dangerFrame.visible=false
 	if direction!=Vector2.ZERO:
 		animationPeriodRotation+=_delta*45
 		$AnimatedSprite2D.rotation=0.2*sin(animationPeriodRotation)
-		print(rotation)
 	else:
 		$AnimatedSprite2D.rotation=0
 	if isLightOn:
@@ -42,6 +46,7 @@ func _physics_process(_delta: float) -> void:
 	$AnimatedSprite2D.position.y=-4-1*sin(animationPeriodVertical)
 	velocity = direction * speed
 	if playerInSmokeyFOV and playerHidden==0:
+		Global.causeOfDeath="That does seem obvious but don't go in front of Smokey.\n"
 		die()
 	move_and_slide()
 

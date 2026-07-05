@@ -4,7 +4,7 @@ func _ready() -> void:
 	%CanvasLayer.addKey()
 
 func _on_body_entered(body: Node2D) -> void:
-	print("entered")
+	print("got key")
 	if body is Player:
 		$CollisionShape2D.queue_free()
 		$sprite.queue_free()
