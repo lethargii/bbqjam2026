@@ -20,9 +20,15 @@ region_rect = Rect2(98, 96, 10, 20)
 
 [node name="TimeToEnter" type="Timer" parent="." unique_id=1331896750]
 wait_time = 0.5
+one_shot = true
 
 [node name="note" parent="." unique_id=1757265446 instance=ExtResource("3_nuwkl")]
 text = "press \"r\" to hide"
 frame = -1
 
+[node name="TimeToClose" type="Timer" parent="." unique_id=352863659]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="TimeToEnter" to="." method="_on_time_to_enter_timeout"]
+[connection signal="timeout" from="TimeToClose" to="." method="_on_time_to_close_timeout"]
