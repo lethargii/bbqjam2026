@@ -10,6 +10,7 @@ var isLightOn:bool=true
 var animationPeriodRotation:float=0 # pour faire fonctionner l'animation du joueur
 var animationPeriodVertical:float=0 # pour faire fonctionner l'animation du joueur
 var isSafe = false
+var timeToLulu:float=100
 
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move left", "move right", "move up", "move down")
@@ -41,6 +42,11 @@ func _physics_process(_delta: float) -> void:
 	if playerInSmokeyFOV and playerHidden==0:
 		Global.causeOfDeath="That does seem obvious but don't go in front of Smokey.\n"
 		die()
+	timeToLulu-=10*_delta
+	if timeToLulu<=0:
+		print("lulu")
+		$lulu.play()
+		timeToLulu=randf_range(20,150)
 	move_and_slide()
 
 func die():

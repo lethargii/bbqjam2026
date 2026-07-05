@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c1wktb3qblpln" path="res://assets/darkness.png" id="3_qd8qs"]
 [ext_resource type="Texture2D" uid="uid://0syqxc5f8sdf" path="res://assets/light.png" id="4_3hik6"]
 [ext_resource type="Texture2D" uid="uid://dytyxbgsydv44" path="res://assets/moonlight.png" id="5_tnfmr"]
+[ext_resource type="AudioStream" uid="uid://d2lnpdk0nces6" path="res://assets/audio/lulu.mp3" id="6_p7obe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wdiq"]
 radius = 4.1231055
@@ -67,3 +68,7 @@ energy = 3.0
 blend_mode = 2
 texture = ExtResource("5_tnfmr")
 texture_scale = 0.2
+
+[node name="lulu" type="AudioStreamPlayer" parent="." unique_id=1210031917]
+stream = ExtResource("6_p7obe")
+volume_db = -15.0
