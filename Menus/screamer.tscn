@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dtvgrrpomy36w"]
+
+[ext_resource type="Texture2D" uid="uid://6lweblbsm5l5" path="res://assets/smokey/screemerSmokey.png" id="1_oi7ha"]
+[ext_resource type="Script" uid="uid://cpvouubv8dfdf" path="res://Menus/screamer.gd" id="1_sn8v1"]
+[ext_resource type="AudioStream" uid="uid://dr65q0yqrt6j8" path="res://assets/audio/Cri-1.mp3" id="2_dpd3y"]
+[ext_resource type="AudioStream" uid="uid://01r4tblag3r4" path="res://assets/audio/Cri-2.mp3" id="3_sn8v1"]
+
+[node name="Screamer" type="CanvasLayer" unique_id=1641246514]
+script = ExtResource("1_sn8v1")
+
+[node name="SpriteSmokey" type="Sprite2D" parent="." unique_id=1148718344]
+position = Vector2(601, 363)
+scale = Vector2(0.4319445, 0.43194443)
+texture = ExtResource("1_oi7ha")
+
+[node name="val1" type="AudioStreamPlayer2D" parent="." unique_id=292788435]
+stream = ExtResource("2_dpd3y")
+volume_db = 10.0
+
+[node name="val2" type="AudioStreamPlayer2D" parent="." unique_id=46725277]
+stream = ExtResource("3_sn8v1")
+volume_db = 10.0
+
+[connection signal="finished" from="val1" to="." method="_on_val_1_finished"]
+[connection signal="finished" from="val2" to="." method="_on_val_2_finished"]
