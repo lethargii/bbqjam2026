@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
 
-const SPEED = 3000.0
+const SPEED = 2048.0
 var direction = "down"
 var onScreen:bool=false
 var surprised:bool=false
 var move:Vector2 = Vector2.ZERO
 var nbAction = 0
+var actionTime = 0
 
 @export var actions : Array[String] = ["look_down"]
+@export var actionsTimes : Array[int] = [1]
 
 var anger:float=0 # si elle monte a 10 die()
 
@@ -111,7 +113,10 @@ func _on_timer_timeout() -> void:
 
 func _on_next_action_timeout() -> void:
 	Callable(self, actions[nbAction]).call()
-	nbAction = (nbAction + 1) % actions.size()
+	actionTime += 1
+	if(actionTime == actionsTimes[nbAction]):
+		nbAction = (nbAction + 1) % actions.size()
+		actionTime = 0
 
 
 func _on_walk_timeout() -> void:

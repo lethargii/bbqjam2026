@@ -51,4 +51,5 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func die():
-	get_tree().change_scene_to_file("res://Menus/loose_menu.tscn")
+	pass
+	#get_tree().change_scene_to_file("res://Menus/loose_menu.tscn")
