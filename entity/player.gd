@@ -6,7 +6,7 @@ var sanitySpeed:float=0.2
 var playerHidden : int = 0
 var playerInSmokeyFOV : bool = false
 var hasAllKey:bool=false
-var isLightOn:bool=false
+var isLightOn:bool=true
 var animationPeriodRotation:float=0 # pour faire fonctionner l'animation du joueur
 var animationPeriodVertical:float=0 # pour faire fonctionner l'animation du joueur
 

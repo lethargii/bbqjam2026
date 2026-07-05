@@ -22,7 +22,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_35xjc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dark",
 "speed": 5.0
 }, {
@@ -30,12 +30,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ypvys")
 }],
-"loop": true,
+"loop": 1,
 "name": &"light",
 "speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=34874288]
+y_sort_enabled = true
 script = ExtResource("1_xlvtu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1974439594]
@@ -44,16 +45,16 @@ shape = SubResource("CircleShape2D_8wdiq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239851035]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_dionx")
-animation = &"dark"
-autoplay = "dark"
+animation = &"light"
+autoplay = "light"
 
 [node name="Dark" type="PointLight2D" parent="." unique_id=12002662]
+visible = false
 blend_mode = 2
 texture = ExtResource("3_qd8qs")
 texture_scale = 0.2
 
 [node name="Light" type="PointLight2D" parent="." unique_id=1708778893]
-visible = false
 blend_mode = 2
 texture = ExtResource("4_3hik6")
 texture_scale = 0.2
