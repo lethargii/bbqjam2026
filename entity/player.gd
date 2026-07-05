@@ -10,7 +10,7 @@ var isLightOn:bool=true
 var animationPeriodRotation:float=0 # pour faire fonctionner l'animation du joueur
 var animationPeriodVertical:float=0 # pour faire fonctionner l'animation du joueur
 var isSafe = false
-var timeToLulu:float=100
+var timeToLulu:float=200
 
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move left", "move right", "move up", "move down")
@@ -46,7 +46,7 @@ func _physics_process(_delta: float) -> void:
 	if timeToLulu<=0:
 		print("lulu")
 		$lulu.play()
-		timeToLulu=randf_range(20,150)
+		timeToLulu=randf_range(50,400)
 	move_and_slide()
 
 func die():
