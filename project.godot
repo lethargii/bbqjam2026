@@ -12,12 +12,13 @@ config_version=5
 
 config/name="bbqJam26"
 run/main_scene="res://Menus/main_menu.tscn"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*uid://chtx7k7a4em6q"
+Song="*uid://caumasve0xwlf"
 
 [display]
 

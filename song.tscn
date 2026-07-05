@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://caumasve0xwlf"]
+
+[ext_resource type="AudioStream" uid="uid://cqns3ds68attb" path="res://assets/audio/abominationSlowed.wav" id="1_ua7c2"]
+
+[node name="Song" type="AudioStreamPlayer" unique_id=969924659]
+stream = ExtResource("1_ua7c2")
+volume_db = 10.0
+autoplay = true
